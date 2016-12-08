@@ -29,7 +29,11 @@ location(Course, Building) :-
 busy(Lecturer, Time) :-
   course(Course, Time, Lecturer, Location).
 
-% Not sure what the desired semantics of `cannot_meet` are. Don't think I can define a way to enumerate all times and prove that their courses leave no mutual time to meet
+% Not sure what the desired semantics of `cannot_meet` are. Many online answers have a predicate that
+% tests whether there exists some time such that both lecturers have classes at that time.
+% But that isn't the logical meening of "cannot meet", which I think should be defined as:
+% "There does not exist a time such that both lecturers do not have a class at that time."
+% Pretty sure we don't know how to do that yet.
 
 % 2. Add rule for schedule_conflict(Time, Place, Course1, Course).
 
